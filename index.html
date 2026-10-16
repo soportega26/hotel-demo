@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Prototipo - Presentación de Proyecto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabecera / Portada -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Bienvenido a Tu Experiencia de Lujo</h1>
+            <p>Descubre el confort y la exclusividad que mereces.</p>
+        </div>
+    </header>
+
+    <!-- Buscador de Reservaciones (Simulador) -->
+    <section class="booking-bar">
+        <form id="bookingForm">
+            <div class="input-group">
+                <label>Check-in</label>
+                <input type="date" required>
+            </div>
+            <div class="input-group">
+                <label>Check-out</label>
+                <input type="date" required>
+            </div>
+            <div class="input-group">
+                <label>Huéspedes</label>
+                <select>
+                    <option>1 Adulto</option>
+                    <option>2 Adultos</option>
+                    <option>Familiar (3+)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn- reservar">Ver Disponibilidad</button>
+        </form>
+    </section>
+
+    <!-- Sección de Habitaciones -->
+    <section class="rooms">
+        <h2>Nuestras Habitaciones</h2>
+        <div class="room-grid">
+            <div class="room-card">
+                <!-- Reemplaza con tus imágenes -->
+                <img src="images/habitacion1.jpg" alt="Habitación Deluxe">
+                <h3>Suite Deluxe</h3>
+                <p>Espaciosa, con vista panorámica y cama king-size.</p>
+                <span class="price">$150 USD / noche</span>
+            </div>
+            <!-- Puedes duplicar este bloque para más habitaciones -->
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
