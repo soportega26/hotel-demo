@@ -1,0 +1,1564 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reset global corregido */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a;
+    background-color: #fcfbf9;
+}
+
+/* Navegación al estilo Ecoho */
+/* Barra de Navegación Fija y Transparente (Sin barra blanca) */
+/* Navegación Estática Normal (Se queda arriba y NO te persigue al bajar) */
+/* Barra de Navegación: Subida hacia arriba y sin bloquear el contenido al hacer scroll */
+.navbar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 50px !important; /* Reducimos el padding superior/inferior para que suba */
+    background: transparent !important;
+    box-shadow: none !important;
+    z-index: 10 !important;
+}
+
+/* Tamaño del Logo */
+.logo {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.nav-logo-img {
+    height: 200px !important; /* Tamaño equilibrado para el logo */
+    width: auto !important;
+    display: block !important;
+}
+
+/* Menú de Enlaces */
+.nav-links {
+    display: flex !important;
+    gap: 35px !important; /* Espacio cómodo entre opciones */
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Letras del menú más grandes y legibles */
+.nav-links a {
+    text-decoration: none !important;
+    color: #0d1527 !important;
+    font-weight: 700 !important;      /* Un poco más de cuerpo/negrita */
+    font-size: 16px !important;     /* Letras más grandes (antes estaban en 14px) */
+    transition: color 0.3s ease !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #f99b1d !important;      /* Color corporativo al pasar el cursor o estar activo */
+}
+
+/* Hero / Banner Principal con Carrusel */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 6s ease-out;
+    transform: scale(1.05); /* Efecto suave de zoom */
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 20, 15, 0.45);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 36px;
+    background: #a37d4c;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #876437;
+}
+
+/* Motor de Búsqueda / Reservaciones */
+.booking-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.booking-card {
+    background: #ffffff;
+    padding: 35px 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    max-width: 1100px;
+    width: 100%;
+    border-top: 3px solid #a37d4c;
+}
+
+.booking-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #2b231d;
+    font-weight: 600;
+}
+
+#bookingForm {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    color: #888;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    padding: 14px;
+    border: 1px solid #e2ddd5;
+    background: #faf8f5;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+
+.btn-search {
+    padding: 15px;
+    background: #2b231d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-search:hover {
+    background: #a37d4c;
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f4f8f4;
+    color: #2d5a27;
+    border-left: 3px solid #2d5a27;
+    display: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Sección Bienvenida y Galería Destacada */
+.welcome-section {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.welcome-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+.welcome-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555555;
+    max-width: 1100px;
+    margin: 0 auto 40px auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.welcome-description strong {
+    color: #333333;
+}
+
+/* Grilla de 4 Fotos */
+.featured-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    align-items: center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    height: 180px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para Navegación en Páginas Secundarias */
+.navbar-solid {
+    background: #0d1527 !important;
+    position: sticky;
+}
+
+.nav-links a.active {
+    color: #f99b1d;
+    font-weight: 700;
+}
+
+.page-header {
+    background: linear-gradient(rgba(13, 21, 39, 0.7), rgba(13, 21, 39, 0.7)), url('images/destacada1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px 20px;
+}
+
+.page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #e2e8f0;
+}
+
+/* Contenedor Principal de la Página de Habitaciones */
+.rooms-page-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Botones de Pestañas / Filtro de secciones */
+.rooms-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+    border: 2px solid #e2e8f0;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-btn i {
+    color: #1a1a1a;
+    font-size: 15px;
+}
+
+.tab-btn:hover {
+    border-color: #f99b1d;
+    background-color: #ffffff;
+}
+
+.tab-btn.active {
+    background-color: #0d1527;
+    color: #ffffff;
+    border-color: #0d1527;
+}
+
+.tab-btn.active i {
+    color: #f99b1d;
+}
+
+/* Centrado general de los títulos y descripciones de las pestañas */
+.category-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #0d1527;
+    margin-bottom: 10px;
+    border-left: 4px solid #f99b1d; /* Barrita naranja identificativa */
+    padding-left: 12px;
+    text-align: left;
+}
+
+.category-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding-left: 16px;
+    text-align: left;
+}
+
+/* Alineación de la Grilla de Habitaciones (2 Columnas) */
+.rooms-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas con espacio cómodo */
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Centrado elegante en la pestaña Select de 1 sola tarjeta */
+/* Asegura que la grilla de Select mantenga exactamente el mismo formato 2x2 de Casa Marina */
+#tab-select-adults .rooms-grid-detailed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mismo grid de 2 columnas */
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#tab-select-adults .room-card-detailed {
+    max-width: 100%; /* Ocupa el ancho natural de la columna, idéntico a Casa Marina */
+    width: 100%;
+}
+
+.room-card-detailed {
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card-detailed img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.room-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.room-badge {
+    align-self: flex-start;
+    background: #f99b1d;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.badge-adults {
+    background: #2b231d;
+}
+
+.room-card-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.room-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Lista de Servicios Espaciosa y Limpia */
+.room-amenities {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 18px;
+}
+
+.room-amenities li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #444444;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.room-amenities li i {
+    color: #1a1a1a !important;
+    font-size: 14px;
+    width: 18px;
+    min-width: 18px;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.room-card-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-secondary {
+    background: #0d1527;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #f99b1d;
+}
+
+/* Footer Estilo Amhsa Marina */
+.main-footer {
+    background-color: #0d1527;
+    color: #ffffff;
+    padding-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 0 20px 50px 20px;
+    align-items: start;
+}
+
+.footer-card-orange {
+    background-color: #f99b1d;
+    color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 4px;
+}
+
+.footer-card-orange h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.footer-card-orange p {
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.footer-column h3 {
+    color: #f99b1d;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-column h3::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background-color: #f99b1d;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    font-size: 13px;
+    margin-bottom: 14px;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+.footer-column ul li a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #f99b1d;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #f99b1d;
+    border-color: #f99b1d;
+}
+
+.footer-bottom {
+    background-color: #090e1a;
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13px;
+    color: #94a3b8;
+    text-align: center;
+}
+
+.footer-bottom a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Consultas de Medios / Responsive */
+@media (max-width: 992px) {
+    .featured-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rooms-grid-detailed {
+        grid-template-columns: 1fr;
+    }
+
+    .room-amenities {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .featured-gallery {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item {
+        height: 220px;
+    }
+}
+
+/* Estilos para el Layout Premium Zig-Zag de Select */
+.select-hero-intro {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+}
+
+.select-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #666666;
+}
+
+.select-rooms-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px; /* Separación amplia entre cada habitación */
+}
+
+/* Fila de Habitación */
+.select-room-item {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Inversión en Zig-Zag */
+.select-room-item.reverse {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.select-room-item.reverse .select-room-img {
+    order: 2; /* Pasa la imagen a la derecha en filas pares */
+}
+
+.select-room-item.reverse .select-room-info {
+    order: 1; /* Pasa el texto a la izquierda en filas pares */
+}
+
+/* Estilo de Imagen con Bordes Suaves y Sombra */
+.select-room-img {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.select-room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.select-room-img:hover img {
+    transform: scale(1.03);
+}
+
+/* Tipografía y Contenido */
+.select-room-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: #111111;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.select-room-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Iconos de Servicios Resumidos */
+.room-amenities-mini {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.room-amenities-mini li {
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.room-amenities-mini li i {
+    color: #1a1a1a;
+    font-size: 13px;
+}
+
+/* Botones Naranja y Link Elegante */
+.select-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-select-orange {
+    background-color: #f99b1d;
+    color: #ffffff;
+    padding: 12px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.3s ease;
+}
+
+.btn-select-orange:hover {
+    background-color: #d8800e;
+}
+
+.btn-select-link {
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #111111;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.btn-select-link:hover {
+    color: #f99b1d;
+}
+
+/* Adaptación Responsiva para Celulares */
+@media (max-width: 868px) {
+    .select-room-item, 
+    .select-room-item.reverse {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .select-room-item.reverse .select-room-img,
+    .select-room-item.reverse .select-room-info {
+        order: unset; /* En móviles vuelve al orden vertical normal */
+    }
+
+    .select-room-img {
+        height: 260px;
+    }
+}
+
+/* Lista completa de servicios para la sección Select */
+.room-amenities-full {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 25px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas equilibradas */
+    gap: 10px 15px;
+}
+
+.room-amenities-full li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.room-amenities-full li i {
+    color: #1a1a1a !important;
+    font-size: 13px;
+    width: 16px;
+    min-width: 16px;
+    text-align: center;
+}
+
+/* Asegurar que el botón de reservar quede limpio sin el enlace al lado */
+.select-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.room-tab-content {
+    padding-bottom: 80px; /* Deja un respiro limpio al final de cualquier pestaña */
+}
+#view-galeria {
+    padding-top: 60px !important; /* Reduce el espacio superior de la SPA */
+    margin-top: -30px; /* Sube la sección para acercarla al bloque superior */
+}
+
+/* Contenedor y Estilos de la Vista Galería */
+.gallery-page-container {
+    max-width: 1100px;
+    margin: 10px auto 60px auto !important; /* Ajusta los márgenes superior e inferior */
+    padding: 0 20px;
+}
+
+/* Filtros de la Galería */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.gallery-filter-btn {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-filter-btn.active, .gallery-filter-btn:hover {
+    background: #0d1527;
+    color: #ffffff;
+    border-color: #0d1527;
+}
+
+/* Grilla de Fotos y Videos */
+.gallery-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.media-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+}
+
+.media-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.media-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Efecto Hover sobre las fotos */
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 21, 39, 0.6);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 10px;
+}
+
+.media-card:hover .media-overlay {
+    opacity: 1;
+}
+
+.media-overlay i {
+    font-size: 24px;
+    color: #f99b1d;
+}
+
+/* Adaptador para Videos Iframe */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.media-info-bar {
+    padding: 12px 18px;
+    background: #0d1527;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.media-info-bar i {
+    color: #f99b1d;
+}
+
+@media (max-width: 768px) {
+    .gallery-media-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estado de galería vacía / marcador de posición */
+.gallery-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-page-container {
+    max-width: 1100px;
+    margin: 50px auto 80px auto;
+    padding: 0 20px;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.gallery-filter-btn {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-filter-btn.active, .gallery-filter-btn:hover {
+    background: #0d1527;
+    color: #ffffff;
+    border-color: #0d1527;
+}
+
+.gallery-media-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.media-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+}
+
+.media-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.media-card:hover img {
+    transform: scale(1.05);
+}
+
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 21, 39, 0.6);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 10px;
+}
+
+.media-card:hover .media-overlay {
+    opacity: 1;
+}
+
+.media-overlay i {
+    font-size: 24px;
+    color: #f99b1d;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.media-info-bar {
+    padding: 12px 18px;
+    background: #0d1527;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.media-info-bar i {
+    color: #f99b1d;
+}
+
+@media (max-width: 768px) {
+    .gallery-media-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Grilla Asimétrica Estilo Revista (Bento / Masonry feel) */
+.gallery-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+/* Elemento destacado que ocupa 2 columnas */
+.media-card.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.media-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+.media-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.media-card:hover img {
+    transform: scale(1.04);
+}
+
+/* Efecto Overlay al pasar el mouse */
+.media-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 21, 39, 0.65);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.media-card:hover .media-overlay {
+    opacity: 1;
+}
+
+.media-overlay i {
+    font-size: 28px;
+    color: #f99b1d;
+}
+
+.media-overlay span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Contenedor de Video */
+.media-card.item-video {
+    grid-column: span 1;
+    grid-row: span 1;
+    cursor: default;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.media-info-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(13, 21, 39, 0.85);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.media-info-bar i {
+    color: #f99b1d;
+}
+
+/* Estilos de la Ventana Modal (Lightbox) */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.lightbox-content-wrapper {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.lightbox-content-wrapper img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #f99b1d;
+}
+
+/* Adaptabilidad Responsiva para Móviles */
+@media (max-width: 900px) {
+    .gallery-media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+    .media-card.featured {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-media-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+    .media-card.featured {
+        grid-column: span 1;
+    }
+}
+
+.video-container-native {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #000000;
+}
+
+.video-container-native video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tarjeta de Video Centrada y Compacta */
+.video-featured-card {
+    grid-column: 1 / -1 !important;
+    max-width: 520px !important; /* Ancho recogido y prolijo */
+    width: 100% !important;
+    margin: 20px auto !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18) !important;
+    justify-self: center !important;
+    background: #0d1527 !important;
+}
+
+/* Contenedor Proporcional HD (16:9) */
+.video-container-native {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    background-color: #000000 !important;
+}
+
+.video-container-native video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Mantiene la proporción del fotograma sin recortar */
+    display: block !important;
+    outline: none !important;
+}
+
+/* Barra inferior del título del video */
+.media-info-bar {
+    padding: 12px 18px !important;
+    background: #0d1527 !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.media-info-bar i {
+    color: #f99b1d !important;
+}
+
+@media (max-width: 768px) {
+    .video-container-native {
+        height: 240px; /* Ajuste responsivo para pantallas móviles */
+    }
+}
+
+/* ============================================================
+   SECCIÓN DE NOTICIAS: DISEÑO IDÉNTICO A LA REFERENCIA (CON VIDEO)
+   ============================================================ */
+
+/* Contenedor Principal de la Página */
+.news-page-container {
+    max-width: 1100px !important;
+    margin: 40px auto 80px auto !important;
+    padding: 0 20px !important;
+}
+
+/* Tarjeta Principal (Grid 50/50 idéntico al de la imagen con foto) */
+.news-featured-card {
+    display: grid !important;
+    grid-template-columns: 1fr 1.1fr !important; /* Proporción generosa y equilibrada */
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #eaeaea !important;
+    margin-top: 30px !important;
+    gap: 0 !important;
+}
+
+/* Contenedor del Video (Izquierda - Ocupa todo el alto natural de la tarjeta) */
+.news-image-wrapper {
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 450px !important; /* Mantiene la misma altura amplia de la foto */
+    background: #000000 !important;
+}
+
+/* Video MP4 adaptado exactamente con object-fit: cover (Cero manchas negras) */
+.news-bg-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Clave para que llene el espacio igual que la foto */
+    display: block !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    
+}
+
+/* Efecto Zoom idéntico al de la imagen al pasar el mouse */
+.news-featured-card:hover .news-bg-video {
+    transform: scale(1.04) !important;
+}
+
+/* Etiqueta Naranja (COMUNICADO OFICIAL) en su posición exacta */
+.news-badge {
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
+    background: #f99b1d !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+    z-index: 10 !important;
+}
+
+/* Contenedor de Texto (Derecha - Idéntico a la referencia) */
+.news-content-wrapper {
+    padding: 45px 50px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+/* Metadatos */
+.news-meta {
+    display: flex !important;
+    gap: 20px !important;
+    font-size: 12px !important;
+    color: #888888 !important;
+    margin-bottom: 12px !important;
+    font-weight: 600 !important;
+}
+
+.news-meta i {
+    color: #f99b1d !important;
+    margin-right: 5px !important;
+}
+
+/* Título de la Noticia */
+.news-title {
+    font-size: 22px !important;
+    color: #0d1527 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+    font-family: 'Playfair Display', serif !important;
+}
+
+/* Párrafos de Texto */
+.news-text {
+    font-size: 14px !important;
+    color: #555555 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Botón Leer Más */
+.btn-read-more {
+    align-self: flex-start !important;
+    background: transparent !important;
+    border: 2px solid #0d1527 !important;
+    color: #0d1527 !important;
+    padding: 10px 22px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+}
+
+.btn-read-more:hover {
+    background: #0d1527 !important;
+    color: #ffffff !important;
+    gap: 12px !important;
+}
+
+/* Adaptación Responsiva para Móviles */
+@media (max-width: 900px) {
+    .news-featured-card {
+        grid-template-columns: 1fr !important;
+    }
+    .news-image-wrapper {
+        min-height: 300px !important;
+        height: 300px !important;
+    }
+    .news-content-wrapper {
+        padding: 30px !important;
+    }
+}
