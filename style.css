@@ -1648,28 +1648,22 @@ body {
         width: auto;
     }
 
-    /* Menú en una sola línea horizontal bien alineada */
-    .nav-links {
-        display: flex;
-        flex-direction: row; /* Forzar fila horizontal */
-        justify-content: center;
-        align-items: center;
-        flex-wrap: nowrap; /* Evita que baje a una segunda fila */
-        gap: 12px; /* Espacio compacto entre opciones */
-        width: 100%;
-        margin-top: 4px;
+   /* Ajuste de altura del hero para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .hero-section, #view-inicio .hero {
+        min-height: auto;
+        padding-top: 15px;
+        padding-bottom: 30px;
     }
 
-    .nav-links a {
-        font-size: 13px; /* Tamaño legible y adecuado para móviles */
-        padding: 4px 6px;
-        font-weight: 600;
-        white-space: nowrap;
-        text-transform: uppercase;
+    .hero-title, .hero-content h1 {
+        font-size: 1.5rem; /* Reduce ligeramente el tamaño del título principal */
+        line-height: 1.2;
     }
 
-    /* Ajuste para que el título principal no quede pegado al menú */
-    .hero-content, .main-title-container {
-        margin-top: 20px;
+    .btn-disponibilidad {
+        padding: 10px 18px;
+        font-size: 13px;
     }
+}
 }
