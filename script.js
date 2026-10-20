@@ -1,6 +1,12 @@
 // Carrusel de Imágenes
+// Carrusel de Imágenes
 const slides = document.querySelectorAll('.slide');
 let currentSlide = 0;
+
+// Asegurar que la primera diapositiva inicie activa de inmediato
+if (slides.length > 0) {
+    slides[0].classList.add('active');
+}
 
 function nextSlide() {
     if (slides.length > 0) {
@@ -9,9 +15,12 @@ function nextSlide() {
         slides[currentSlide].classList.add('active');
     }
 }
-setInterval(nextSlide, 4000);
 
-// Función para cambiar de vista sin recargar la página
+// Cambia de imagen cada 4 segundos con transición suave
+if (slides.length > 1) {
+    setInterval(nextSlide, 4000);
+}
+
 // Función para cambiar de vista sin recargar la página
 function showView(viewName) {
     // 1. Ocultar TODAS las vistas SPA
