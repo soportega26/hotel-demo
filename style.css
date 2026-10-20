@@ -1629,27 +1629,47 @@ body {
     }
 }
 
-/* Corrección del menú superior en teléfonos móviles */
+/* =========================================
+   MENÚ FLUIDO Y COMPACTO EN MÓVILES (< 768px)
+   ========================================= */
 @media screen and (max-width: 768px) {
     .navbar {
         display: flex;
-        flex-direction: column; /* Coloca el logo arriba y los enlaces abajo */
+        flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 8px 10px;
+        gap: 6px;
+        width: 100%;
     }
 
+    /* Logo ajustado para no ocupar demasiado alto */
+    .navbar img, .logo {
+        max-height: 45px; 
+        width: auto;
+    }
+
+    /* Menú en una sola línea horizontal bien alineada */
     .nav-links {
         display: flex;
-        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea si no caben */
+        flex-direction: row; /* Forzar fila horizontal */
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        flex-wrap: nowrap; /* Evita que baje a una segunda fila */
+        gap: 12px; /* Espacio compacto entre opciones */
         width: 100%;
-        margin-top: 10px;
+        margin-top: 4px;
     }
 
     .nav-links a {
-        font-size: 14px;
-        padding: 5px 8px;
-        white-space: nowrap; /* Evita que el texto de un botón se parta a la mitad */
+        font-size: 13px; /* Tamaño legible y adecuado para móviles */
+        padding: 4px 6px;
+        font-weight: 600;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    /* Ajuste para que el título principal no quede pegado al menú */
+    .hero-content, .main-title-container {
+        margin-top: 20px;
     }
 }
