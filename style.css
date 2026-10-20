@@ -907,9 +907,20 @@ body {
 .room-tab-content {
     padding-bottom: 80px; /* Deja un respiro limpio al final de cualquier pestaña */
 }
+/* Corrección de franja blanca superior en la vista de Galería */
 #view-galeria {
-    padding-top: 60px !important; /* Reduce el espacio superior de la SPA */
-    margin-top: -30px; /* Sube la sección para acercarla al bloque superior */
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#view-galeria .page-header,
+#view-galeria .hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+#view-galeria .gallery-page-container {
+    margin-top: 30px !important; /* Mantiene el espacio del contenido pero sin empujar la portada */
 }
 
 /* Contenedor y Estilos de la Vista Galería */

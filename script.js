@@ -87,29 +87,6 @@ function closeLightbox() {
     document.body.style.overflow = 'auto';
 }
 
-// Filtro multimedia
-function filterGallery(category, evt) {
-    const photos = document.querySelectorAll('.item-photo');
-    const videos = document.querySelectorAll('.item-video');
-    const filterBtns = document.querySelectorAll('.gallery-filter-btn');
-
-    filterBtns.forEach(btn => btn.classList.remove('active'));
-    if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active');
-    }
-
-    if (category === 'all') {
-        photos.forEach(el => el.style.display = 'block');
-        videos.forEach(el => el.style.display = 'block');
-    } else if (category === 'photos') {
-        photos.forEach(el => el.style.display = 'block');
-        videos.forEach(el => el.style.display = 'none');
-    } else if (category === 'videos') {
-        photos.forEach(el => el.style.display = 'none');
-        videos.forEach(el => el.style.display = 'block');
-    }
-}
-
 // Filtro rápido de contenido multimedia
 function filterGallery(category, evt) {
     const photos = document.querySelectorAll('.item-photo');
@@ -145,24 +122,28 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 });
 
 function switchRoomTab(tabName) {
-    // Amagar tots els continguts de pestanyes
-    document.getElementById('tab-casa-marina').style.display = 'none';
-    document.getElementById('tab-select-adults').style.display = 'none';
+    // 1. Obtener los contenedores de las pestañas
+    const tabCasaMarina = document.getElementById('tab-casa-marina');
+    const tabSelectAdults = document.getElementById('tab-select-adults');
 
-    // Desactivar l'estat actiu de tots els botons
-    const buttons = document.querySelectorAll('.tab-btn');
+    // 2. Obtener los botones de las pestañas de habitaciones
+    const buttons = document.querySelectorAll('.rooms-tabs .tab-btn');
+
+    // 3. Ocultar ambos y remover la clase 'active' de los botones
+    if (tabCasaMarina) tabCasaMarina.style.display = 'none';
+    if (tabSelectAdults) tabSelectAdults.style.display = 'none';
+    
     buttons.forEach(btn => btn.classList.remove('active'));
 
-    // Mostrar la pestanya seleccionada i activar el seu botó
+    // 4. Mostrar únicamente la pestaña seleccionada y activar su respectivo botón
     if (tabName === 'casa-marina') {
-        document.getElementById('tab-casa-marina').style.display = 'block';
-        buttons[0].classList.add('active');
+        if (tabCasaMarina) tabCasaMarina.style.display = 'block';
+        if (buttons[0]) buttons[0].classList.add('active');
     } else if (tabName === 'select-adults') {
-        document.getElementById('tab-select-adults').style.display = 'block';
-        buttons[1].classList.add('active');
+        if (tabSelectAdults) tabSelectAdults.style.display = 'block';
+        if (buttons[1]) buttons[1].classList.add('active');
     }
 }
-
 // Cambiar de Hotel en la Galería
 // Cambiar de Hotel en la Galería
 function switchGalleryHotel(hotel, evt) {
@@ -275,5 +256,21 @@ function rotateWelcomeImages() {
     }, 400);
 }
 
-// Cambia la imagen cada 5 segundos
-setInterval(rotateWelcomeImages, 5000);
+
+
+function navigateToHabitaciones(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    // 1. Cambiamos la vista SPA a habitaciones
+    if (typeof showView === 'function') {
+        showView('habitaciones');
+    }
+
+    // 2. Forzamos de forma absoluta el salto al inicio de la página sin animaciones
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; 
+}

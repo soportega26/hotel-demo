@@ -24,7 +24,109 @@
         </ul>
     </nav>
 
-    <!-- Header / Portada Fija con Carrusel -->
+   
+    <!-- ================= VISTA 1: INICIO ================= -->
+    <div id="view-inicio" class="page-view">
+        
+        <!-- Header / Portada Fija con Carrusel -->
+        <header class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-slider">
+                <div class="slide active" style="background-image: url('images/CASA_MARINA_JACUZZI.jpg');"></div>
+                <div class="slide" style="background-image: url('images/CASA_MARINA_MAIN_POOL.jpg');"></div>
+                <div class="slide" style="background-image: url('images/CASA_MARINA_POOL.jpg');"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Descubre una mezcla de nuestros Hoteles</h1>
+                <a href="#reservas" class="btn-primary">Ver Disponibilidad</a>
+            </div>
+        </header>
+        
+
+        <!-- Buscador de Disponibilidad Fijo -->
+        <section id="reservas" class="booking-section">
+            <div class="booking-card">
+                <h2>Reserva Tu Estancia</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label>Fecha de Llegada</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha de Salida</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Huéspedes</label>
+                        <select>
+                            <option>1 Adulto</option>
+                            <option selected>2 Adultos</option>
+                            <option>Familia / Grupos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-search">Buscar Habitación</button>
+                </form>
+                <div id="bookingConfirmation" class="confirmation-message"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE BIENVENIDA ESTILO EDITORIAL -->
+        <section class="welcome-editorial-section">
+            <div class="welcome-container">
+                
+                <!-- Columna Izquierda: Información Principal -->
+                <div class="welcome-text-content">
+                    <span class="welcome-subtitle">BIENVENIDO A AMHSA MARINA</span>
+                    <h2 class="welcome-title">Una Experiencia Inolvidable frente al Mar</h2>
+                    
+                    <p class="welcome-paragraph">
+                        Casa Marina Sosua by Wyndham es un complejo turístico «todo incluido» situado a 10 minutos del Aeropuerto Internacional de Puerto Plata y a 25 minutos de la ciudad de Puerto Plata. Este establecimiento, orientado a las familias, se encuentra en la localidad de Sosúa, en una playa semiprivada con más de 500 metros de frente de playa, y ofrece una amplia variedad de opciones para quienes desean disfrutar de unas vacaciones inolvidables.
+                    </p>
+                    
+                    <p class="welcome-paragraph highlight-text">
+                        Con una ubicación privilegiada y millas de hermosas playas de arena dorada y aguas cristalinas, Amhsa Marina Hotels & Resorts ofrece a sus huéspedes una experiencia vacacional de descanso, confort y momentos inolvidables.
+                    </p>
+                   
+                    <p class="welcome-paragraph">
+                        Disfruta de la mejor experiencia Todo Incluido con una destacada gastronomía buffet y restaurantes de especialidad, entretenimiento en vivo para todas las edades y un servicio cálido que te hará sentir como en casa.
+                    </p>
+
+                    <p class="welcome-paragraph">
+                        Ya sea que busques relajación total en nuestras piscinas y spa, o la emoción de los deportes acuáticos y excursiones locales en Sosúa y Samaná, aquí encontrarás el estilo de vida vacacional que estabas buscando.
+                    </p>
+
+                    <div class="welcome-badge">
+                        <h3>¿Listo para la Aventura?</h3>
+                        <p>Descubre nuestras exclusivas ofertas de temporada y asegura tu lugar hoy mismo.</p>
+                        <button type="button" class="welcome-btn" onclick="navigateToHabitaciones(event)">
+                            EXPLORAR HABITACIONES
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Galería Dual / Slider Dinámico -->
+                <div class="welcome-media-content">
+                    <div class="image-stack-wrapper">
+                        <img src="images/CASA_MARINA_LOBBY1.jpg" alt="Amhsa Marina Experience" class="welcome-img img-primary">
+                        <div class="accent-image-card">
+                            <img src="images/CASA_MARINA_LOBBY2.jpg" alt="Hotel Pool View" class="welcome-img img-secondary">
+                            <span class="accent-badge-text">Todo Incluido</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div> <!-- FIN DE VISTA INICIO -->
+    
+    </div>
+</section>
+
+        <!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
+<!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
+<div id="view-habitaciones" class="page-view" style="display: none;">
+     <!-- Header / Portada Fija con Carrusel -->
     <header id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-slider">
@@ -38,100 +140,17 @@
         </div>
     </header>
 
-    <!-- Buscador de Disponibilidad Fijo -->
-    <section id="reservas" class="booking-section">
-        <div class="booking-card">
-            <h2>Reserva Tu Estancia</h2>
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label>Fecha de Llegada</label>
-                    <input type="date" required>
-                </div>
-                <div class="form-group">
-                    <label>Fecha de Salida</label>
-                    <input type="date" required>
-                </div>
-                <div class="form-group">
-                    <label>Huéspedes</label>
-                    <select>
-                        <option>1 Adulto</option>
-                        <option selected>2 Adultos</option>
-                        <option>Familia / Grupos</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-search">Buscar Habitación</button>
-            </form>
-            <div id="bookingConfirmation" class="confirmation-message"></div>
-        </div>
-    </section>
+<section class="rooms-page-container">
 
-    <!-- CUERPO DINÁMICO DE LA PÁGINA -->
-    <main>
-        
-     <!-- SECCIÓN DE BIENVENIDA ESTILO EDITORIAL -->
-<section class="welcome-editorial-section">
-    <div class="welcome-container">
-        
-        <!-- Columna Izquierda: Información Principal -->
-        <div class="welcome-text-content">
-            <span class="welcome-subtitle">BIENVENIDO A AMHSA MARINA</span>
-            <h2 class="welcome-title">Una Experiencia Inolvidable frente al Mar</h2>
-            
-            <p class="welcome-paragraph highlight-text">
-                Con una ubicación privilegiada y millas de hermosas playas de arena dorada y aguas cristalinas, Amhsa Marina Hotels & Resorts ofrece a sus huéspedes una experiencia vacacional de descanso, confort y momentos inolvidables.
-            </p>
-            
-            <p class="welcome-paragraph">
-                Disfruta de la mejor experiencia Todo Incluido con una destacada gastronomía buffet y restaurantes de especialidad, entretenimiento en vivo para todas las edades y un servicio cálido que te hará sentir como en casa.
-            </p>
-
-            <p class="welcome-paragraph">
-                Ya sea que busques relajación total en nuestras piscinas y spa, o la emoción de los deportes acuáticos y excursiones locales en Sosúa y Samaná, aquí encontrarás el estilo de vida vacacional que estabas buscando.
-            </p>
-
-            <div class="welcome-badge">
-                <h3>¿Listo para la Aventura?</h3>
-                <p>Descubre nuestras exclusivas ofertas de temporada y asegura tu lugar hoy mismo.</p>
-                <a href="#habitaciones" onclick="showView('habitaciones')" class="welcome-btn">Explorar Habitaciones</a>
-            </div>
-        </div>
-
-        <!-- Columna Derecha: Galería Dual / Slider Dinámico -->
-        <div class="welcome-media-content">
-            <div class="image-stack-wrapper">
-                <!-- Imagen Principal (Grande) -->
-                <img src="images/welcome-main.jpg" alt="Amhsa Marina Experience" class="welcome-img img-primary">
-                
-                <!-- Segunda Imagen Superpuesta / Accent (Opcional para darle dinamismo) -->
-                <div class="accent-image-card">
-                    <img src="images/welcome-secondary.jpg" alt="Hotel Pool View" class="welcome-img img-secondary">
-                    <span class="accent-badge-text">Todo Incluido Premium</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-        <!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
-<!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
-<div id="view-habitaciones" class="page-view" style="display: none;">
-    <section class="rooms-page-container">
-
-
-      <!-------------------Seccion de Habitaciones  -->
         <!-- Botones de Pestañas / Filtro de secciones -->
         <div class="rooms-tabs">
-            <button class="tab-btn active" onclick="switchRoomTab('casa-marina')">
+            <button type="button" class="tab-btn active" onclick="switchRoomTab('casa-marina')">
                 <i class="fa-solid fa-star star-icon"></i>
-                <span>
-                CASA MARINA SOSUA, TRADEMARK BY<br>WYNDHAM ALL INCLUSIVE
-                </span>
+                <span>CASA MARINA SOSUA, TRADEMARK BY<br>WYNDHAM ALL INCLUSIVE</span>
             </button>
-            <button class="tab-btn" onclick="switchRoomTab('select-adults')">
+            <button type="button" class="tab-btn" onclick="switchRoomTab('select-adults')">
                 <i class="fa-solid fa-star star-icon"></i> 
-                <span>
-            SELECT SOSUA ADULTS ONLY, TRADEMARK<br>BY WYNDHAM ALL INCLUSIVE
-        </span>
+                <span>SELECT SOSUA ADULTS ONLY, TRADEMARK<br>BY WYNDHAM ALL INCLUSIVE</span>
             </button>
         </div>
 
@@ -139,132 +158,127 @@
         <div id="tab-casa-marina" class="room-tab-content">
             <div class="category-section">
                 <h2 class="category-title">Casa Marina Sosúa - Habitaciones Todo Incluido</h2>
-                <p class="category-description">En Casa Marina Sosua queremos que el placer comience y termine en espacios lujosos y confortables. Nuestras habitaciones cuentan con balcones y terrazas con vistas al mar, jardines tropicales y una arquitectura caribeña cautivadora. Elige el tipo de habitación que mejor se adapte a tus vacaciones y deja que la belleza de República Dominicana haga realidad tus sueños.</p>
+                <p class="category-description">En Casa Marina Sosua queremos que el placer comience y termine en espacios lujosos y confortables. Nuestras habitaciones cuentan con balcones y terrazas con vistas al mar, jardines tropicales y una arquitectura caribeña cautivadora.</p>
 
                 <!-- Cuadrícula 2x2 para Casa Marina Familiar -->
                 <div class="rooms-grid-detailed">
                 
-                <!-- 1. Standard Vista Jardín -->
-                <div class="room-card-detailed">
-                    <img src="images/STANDARD.jpg" alt="Standard Vista Jardín">
-                    <div class="room-card-content">
-                        <h3>Standard Vista Jardín</h3>
-                        <p class="room-text">Habitaciones diseñadas especialmente para que disfrutes del máximo confort y relajación, equipadas con dos camas dobles o una cama King, balcón o terraza con vistas al jardín.</p>
-                        <ul class="room-amenities">
-    <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
-    <li><i class="fa-solid fa-bed"></i> Cama King o dos camas dobles</li>
-    <li><i class="fa-solid fa-bath"></i> Baño con bañera</li>
-    <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
-    <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 4 personas</li>
-    <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
-    <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
-    <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
-    <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
-    <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
-    <li><i class="fa-solid fa-wifi"></i> WiFi</li>
-</ul>
-                        <div class="room-card-footer">
-                            <a href="#reservas" class="btn-secondary">Reservar</a>
+                    <!-- 1. Standard Vista Jardín -->
+                    <div class="room-card-detailed">
+                        <img src="images/STANDARD.jpg" alt="Standard Vista Jardín">
+                        <div class="room-card-content">
+                            <h3>Standard Vista Jardín</h3>
+                            <p class="room-text">Habitaciones diseñadas especialmente para que disfrutes del máximo confort y relajación, equipadas con dos camas dobles o una cama King, balcón o terraza con vistas al jardín.</p>
+                            <ul class="room-amenities">
+                                <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
+                                <li><i class="fa-solid fa-bed"></i> Cama King o dos camas dobles</li>
+                                <li><i class="fa-solid fa-bath"></i> Baño con bañera</li>
+                                <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
+                                <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 4 personas</li>
+                                <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
+                                <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
+                                <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
+                                <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
+                                <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
+                                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                            </ul>
+                            <div class="room-card-footer">
+                                <a href="#reservas" class="btn-secondary">Reservar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 2. Deluxe Vista Jardín -->
-                <div class="room-card-detailed">
-                    <img src="images/CASA_MARINA_DELUXE_ROOM_2BED.jpg" alt="Deluxe Vista Jardín">
-                    <div class="room-card-content">
-                        <h3>Deluxe Vista Jardín</h3>
-                        <p class="room-text">Exclusivas habitaciones remodeladas, diseñadas especialmente para su disfrute, equipadas con dos camas Queen o una cama King, terraza o balcón con vistas al jardín, para brindar un espacio perfecto de relajación y confort para que disfrutes de unos días inolvidables.</p>
-                        <ul class="room-amenities">
-    <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
-    <li><i class="fa-solid fa-bed"></i> Cama King o dos camas dobles</li>
-    <li><i class="fa-solid fa-shower"></i> Baño con ducha</li>
-    <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
-    <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 4 personas</li>
-    <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
-    <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
-    <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
-    <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
-    <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
-    <li><i class="fa-solid fa-wifi"></i> WiFi</li>
-</ul>
-                        <div class="room-card-footer">
-                            <a href="#reservas" class="btn-secondary">Reservar</a>
+                    <!-- 2. Deluxe Vista Jardín -->
+                    <div class="room-card-detailed">
+                        <img src="images/CASA_MARINA_DELUXE_ROOM_2BED.jpg" alt="Deluxe Vista Jardín">
+                        <div class="room-card-content">
+                            <h3>Deluxe Vista Jardín</h3>
+                            <p class="room-text">Exclusivas habitaciones remodeladas, diseñadas especialmente para su disfrute, equipadas con dos camas Queen o una cama King, terraza o balcón con vistas al jardín.</p>
+                            <ul class="room-amenities">
+                                <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
+                                <li><i class="fa-solid fa-bed"></i> Cama King o dos camas dobles</li>
+                                <li><i class="fa-solid fa-shower"></i> Baño con ducha</li>
+                                <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
+                                <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 4 personas</li>
+                                <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
+                                <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
+                                <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
+                                <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
+                                <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
+                                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                            </ul>
+                            <div class="room-card-footer">
+                                <a href="#reservas" class="btn-secondary">Reservar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 3. Deluxe Vista al Mar -->
-                <div class="room-card-detailed">
-                    <img src="images/CASA_MARINA_DELUXE_ROOM_1BED.jpg" alt="Deluxe Vista al Mar">
-                    <div class="room-card-content">
-                        <h3>Deluxe Vista al Mar</h3>
-                        <p class="room-text">Exclusivas habitaciones remodeladas, diseñadas especialmente para su disfrute, equipadas con dos camas Queen o una cama King, terraza o balcón con vistas al mar, para brindar un espacio perfecto de relajación y confort para que disfrutes de unos días inolvidables.</p>
-                        <ul class="room-amenities">
-    <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
-    <li><i class="fa-solid fa-bed"></i> Cama King </li>
-    <li><i class="fa-solid fa-shower"></i> Baño con ducha</li>
-    <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
-    <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 2 personas</li>
-    <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
-    <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
-    <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
-    <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
-    <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
-    <li><i class="fa-solid fa-wifi"></i> WiFi</li>
-</ul>
-                        <div class="room-card-footer">
-                            <a href="#reservas" class="btn-secondary">Reservar</a>
+                    <!-- 3. Deluxe Vista al Mar -->
+                    <div class="room-card-detailed">
+                        <img src="images/CASA_MARINA_DELUXE_ROOM_1BED.jpg" alt="Deluxe Vista al Mar">
+                        <div class="room-card-content">
+                            <h3>Deluxe Vista al Mar</h3>
+                            <p class="room-text">Exclusivas habitaciones remodeladas, diseñadas especialmente para su disfrute, equipadas con dos camas Queen o una cama King, terraza o balcón con vistas al mar.</p>
+                            <ul class="room-amenities">
+                                <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
+                                <li><i class="fa-solid fa-bed"></i> Cama King</li>
+                                <li><i class="fa-solid fa-shower"></i> Baño con ducha</li>
+                                <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
+                                <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 2 personas</li>
+                                <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
+                                <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
+                                <li><i class="fa-solid fa-baby"></i> Cunas disponibles</li>
+                                <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
+                                <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
+                                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                            </ul>
+                            <div class="room-card-footer">
+                                <a href="#reservas" class="btn-secondary">Reservar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 4. Standard Solo Adultos -->
-                <div class="room-card-detailed">
-                    <img src="images/SUPERIOR__PRIVEE ADULTS ONLY.jpg" alt="Standard Solo Adultos">
-                    <div class="room-card-content">
-                        <span class="room-badge badge-adults">Solo Adultos (18+)</span>
-                        <p class="room-text">Habitaciones ubicadas en un área exclusiva solo para adultos, con una hermosa vista y acceso a la piscina privada de la zona Privée. Equipadas con una cama King o dos camas dobles, terraza o balcón y amenidades premium.</p>
-                        <ul class="room-amenities">
-    <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
-    <li><i class="fa-solid fa-bed"></i> Cama King </li>
-    <li><i class="fa-solid fa-bath"></i> Baño con bañera</li>
-    <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
-    <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 2 personas</li>
-    <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
-    <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
-    <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
-    <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
-    <li><i class="fa-solid fa-wifi"></i> WiFi</li>
-    <li><i class="fa-solid fa-seedling"></i> Vista jardin</li>
-    <li><i class="fa-solid fa-mug-hot"></i> Acceso al Coffee Shop y Sport Bar</li>
-    <li><i class="fa-solid fa-utensils"></i> Reservaciones prioritarias a la carta</li>
-</ul>
-                        <div class="room-card-footer">
-                            <a href="#reservas" class="btn-secondary">Reservar</a>
+                    <!-- 4. Standard Solo Adultos -->
+                    <div class="room-card-detailed">
+                        <img src="images/SUPERIOR__PRIVEE ADULTS ONLY.jpg" alt="Standard Solo Adultos">
+                        <div class="room-card-content">
+                            <span class="room-badge badge-adults">Solo Adultos (18+)</span>
+                            <h3>Standard Solo Adultos</h3>
+                            <p class="room-text">Habitaciones ubicadas en un área exclusiva solo para adultos, con una hermosa vista y acceso a la piscina privada de la zona Privée.</p>
+                            <ul class="room-amenities">
+                                <li><i class="fa-solid fa-umbrella-beach"></i> Balcón o terraza</li>
+                                <li><i class="fa-solid fa-bed"></i> Cama King</li>
+                                <li><i class="fa-solid fa-bath"></i> Baño con bañera</li>
+                                <li><i class="fa-solid fa-lock"></i> Caja de seguridad</li>
+                                <li><i class="fa-solid fa-user-group"></i> Ocupación máxima 2 personas</li>
+                                <li><i class="fa-solid fa-shirt"></i> Plancha y tabla</li>
+                                <li><i class="fa-solid fa-wind"></i> Secador de pelo</li>
+                                <li><i class="fa-solid fa-wine-bottle"></i> Minibar</li>
+                                <li><i class="fa-solid fa-ban-smoking"></i> No fumadores</li>
+                                <li><i class="fa-solid fa-wifi"></i> WiFi</li>
+                                <li><i class="fa-solid fa-seedling"></i> Vista jardín</li>
+                            </ul>
+                            <div class="room-card-footer">
+                                <a href="#reservas" class="btn-secondary">Reservar</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div> <!-- Fin de rooms-grid-detailed -->
-        </div> <!-- Fin de category-section -->
+                </div> <!-- Fin de rooms-grid-detailed -->
+            </div> <!-- Fin de category-section -->
+        </div> <!-- Fin de tab-casa-marina -->
 
-    </section>
-</div>
-   
+        <!-- PESTAÑA 2: SELECT AT CASA MARINA (Solo Adultos) -->
+        <div id="tab-select-adults" class="room-tab-content" style="display: none;">
+            <div class="select-hero-intro">
+                <p class="select-description">
+                    En <strong>Select Sosua Adults Only</strong> cada habitación está especialmente diseñada para que disfrutes del máximo confort y relajación. Una zona exclusiva solo para adultos con vistas al jardín, al mar o con acceso directo a piscina privada.
+                </p>
+            </div>
 
-<!-- PESTAÑA 2: SELECT AT CASA MARINA (Solo Adultos) -->
-<div id="tab-select-adults" class="room-tab-content" style="display: none;">
-    <div class="select-hero-intro">
-        <p class="select-description">
-            En <strong>Select Sosua Adults Only</strong> cada habitación está especialmente diseñada para que disfrutes del máximo confort y relajación. Una zona exclusiva solo para adultos con vistas al jardín, al mar o con acceso directo a piscina privada, donde cada detalle celebra tu escapada.
-        </p>
-    </div>
-
-    <div class="select-rooms-container">
-        
-        <!-- Tarjeta 1: Select Premium Vista Jardín -->
-        <article class="select-room-item">
+            <div class="select-rooms-container">
+                <!-- Tarjeta 1: Select Premium Vista Jardín -->
+                <article class="select-room-item">
             <div class="select-room-img">
                 <img src="images/Premium GV SELECT.jpg" alt="Select Premium Vista Jardín">
             </div>
@@ -298,8 +312,7 @@
                 </div>
             </div>
         </article>
-
-        <!-- Tarjeta 2: Select Premium Vista Mar (Invertida) -->
+<!-- Tarjeta 2: Select Premium Vista Mar (Invertida) -->
         <article class="select-room-item">
             <div class="select-room-img">
                 <img src="images/Premium OV SELECT.jpg" alt="Select Premium Vista Mar">
@@ -436,18 +449,36 @@
             </div>
         </article>
     </div>
-</div>   
+</div>  
+
+            </div>
+        </div> <!-- Fin de tab-select-adults -->
+
+    </section>
+</div> <!-- FIN DE VISTA HABITACIONES --> 
                 </div> <!-- Fin de rooms-grid-detailed -->
             </div> <!-- Fin de category-section -->
         </div> <!-- Fin de tab-select-adults -->
 
     </section>
 </div>
-
-<!-- ================= VISTA 3: GALERÍA MULTIMEDIA ================= -->
 <!-- ================= VISTA 3: GALERÍA MULTIMEDIA ================= -->
 <div id="view-galeria" class="page-view" style="display: none;">
-    <section class="gallery-page-container">
+        <!-- Header / Portada Fija con Carrusel -->
+    <header id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/CASA_MARINA_JACUZZI.jpg');"></div>
+            <div class="slide" style="background-image: url('images/CASA_MARINA_MAIN_POOL.jpg');"></div>
+            <div class="slide" style="background-image: url('images/CASA_MARINA_POOL.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Descubre una mezcla de nuestros Hoteles</h1>
+            <a href="#reservas" class="btn-primary">Ver Disponibilidad</a>
+        </div>
+    </header>
+     <section class="gallery-page-container">
+        
         
         <div class="category-section">
             <h2 class="category-title">Galería Multimedia - Amhsa Marina</h2>
@@ -691,6 +722,20 @@
 
 <!-- ================= VISTA: NOTICIAS ================= -->
 <div id="view-noticias" class="page-view" style="display: none;">
+     <!-- Header / Portada Fija con Carrusel -->
+    <header id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/CASA_MARINA_JACUZZI.jpg');"></div>
+            <div class="slide" style="background-image: url('images/CASA_MARINA_MAIN_POOL.jpg');"></div>
+            <div class="slide" style="background-image: url('images/CASA_MARINA_POOL.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Descubre una mezcla de nuestros Hoteles</h1>
+            <a href="#reservas" class="btn-primary">Ver Disponibilidad</a>
+        </div>
+    </header>
+
     <section class="news-page-container">
         
         <div class="category-section">
