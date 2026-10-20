@@ -68,25 +68,50 @@
     <!-- CUERPO DINÁMICO DE LA PÁGINA -->
     <main>
         
-        <!-- VISTA 1: INICIO (Bienvenida y Galería Destacada) -->
-        <div id="view-inicio" class="page-view">
-            <section class="welcome-section">
-                <div class="welcome-container">
-                    <h2>Welcome to CasaMarinaBeach.com®</h2>
-                    <h3>Casa Marina Sosua by Wyndham - All Inclusive Resort</h3>
-                    <p class="welcome-description">
-                        <strong>Casa Marina Sosua by Wyndham</strong> is an all Inclusive resort located 10 minutes from the Puerto Plata International Airport and 25 minutes from Puerto Plata. The family oriented <strong>Casa Marina Sosua by Wyndham</strong> is set in the town of Sosúa on a semi-private beach with more than 500 meters of beach front and has a wide selection of alternatives for those who want an unforgettable vacation.
-                    </p>
-                    <div class="featured-gallery">
-                        <div class="gallery-item"><img src="images/CASA_MARINA_LOBBY1.jpg" alt="Vista Aérea"></div>
-                        <div class="gallery-item"><img src="images/CASA_MARINA_LOBBY2.jpg" alt="Piscina Principal"></div>
-                        <div class="gallery-item"><img src="images/CASA_MARINA_LUIGGI.jpg" alt="Lobby"></div>
-                        <div class="gallery-item"><img src="images/CASA_MARINA_EL_BATEY2.jpg" alt="Jacuzzis y Playa"></div>
-                    </div>
-                </div>
-            </section>
+     <!-- SECCIÓN DE BIENVENIDA ESTILO EDITORIAL -->
+<section class="welcome-editorial-section">
+    <div class="welcome-container">
+        
+        <!-- Columna Izquierda: Información Principal -->
+        <div class="welcome-text-content">
+            <span class="welcome-subtitle">BIENVENIDO A AMHSA MARINA</span>
+            <h2 class="welcome-title">Una Experiencia Inolvidable frente al Mar</h2>
+            
+            <p class="welcome-paragraph highlight-text">
+                Con una ubicación privilegiada y millas de hermosas playas de arena dorada y aguas cristalinas, Amhsa Marina Hotels & Resorts ofrece a sus huéspedes una experiencia vacacional de descanso, confort y momentos inolvidables.
+            </p>
+            
+            <p class="welcome-paragraph">
+                Disfruta de la mejor experiencia Todo Incluido con una destacada gastronomía buffet y restaurantes de especialidad, entretenimiento en vivo para todas las edades y un servicio cálido que te hará sentir como en casa.
+            </p>
+
+            <p class="welcome-paragraph">
+                Ya sea que busques relajación total en nuestras piscinas y spa, o la emoción de los deportes acuáticos y excursiones locales en Sosúa y Samaná, aquí encontrarás el estilo de vida vacacional que estabas buscando.
+            </p>
+
+            <div class="welcome-badge">
+                <h3>¿Listo para la Aventura?</h3>
+                <p>Descubre nuestras exclusivas ofertas de temporada y asegura tu lugar hoy mismo.</p>
+                <a href="#habitaciones" onclick="showView('habitaciones')" class="welcome-btn">Explorar Habitaciones</a>
+            </div>
         </div>
 
+        <!-- Columna Derecha: Galería Dual / Slider Dinámico -->
+        <div class="welcome-media-content">
+            <div class="image-stack-wrapper">
+                <!-- Imagen Principal (Grande) -->
+                <img src="images/welcome-main.jpg" alt="Amhsa Marina Experience" class="welcome-img img-primary">
+                
+                <!-- Segunda Imagen Superpuesta / Accent (Opcional para darle dinamismo) -->
+                <div class="accent-image-card">
+                    <img src="images/welcome-secondary.jpg" alt="Hotel Pool View" class="welcome-img img-secondary">
+                    <span class="accent-badge-text">Todo Incluido Premium</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
         <!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
 <!-- VISTA 2: HABITACIONES (Se muestra al hacer clic en 'Habitaciones') -->
 <div id="view-habitaciones" class="page-view" style="display: none;">

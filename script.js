@@ -251,3 +251,29 @@ function toggleNewsReadMore(btn) {
         btn.innerHTML = 'Leer más <i class="fa-solid fa-arrow-right"></i>';
     }
 }
+
+// Cambio automático de imágenes en la sección de bienvenida
+const welcomeImages = [
+    'images/welcome-main.jpg',
+    'images/welcome-secondary.jpg',
+    'images/galeria1.jpg' // Agrega aquí las fotos que gustes
+];
+
+let currentWelcomeIndex = 0;
+
+function rotateWelcomeImages() {
+    const primaryImg = document.querySelector('.img-primary');
+    if (!primaryImg) return;
+
+    currentWelcomeIndex = (currentWelcomeIndex + 1) % welcomeImages.length;
+    
+    // Transición suave
+    primaryImg.style.opacity = '0.3';
+    setTimeout(() => {
+        primaryImg.src = welcomeImages[currentWelcomeIndex];
+        primaryImg.style.opacity = '1';
+    }, 400);
+}
+
+// Cambia la imagen cada 5 segundos
+setInterval(rotateWelcomeImages, 5000);
