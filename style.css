@@ -1628,3 +1628,28 @@ body {
         text-align: center;
     }
 }
+
+/* Corrección del menú superior en teléfonos móviles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column; /* Coloca el logo arriba y los enlaces abajo */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los botones bajen a la siguiente línea si no caben */
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 5px 8px;
+        white-space: nowrap; /* Evita que el texto de un botón se parta a la mitad */
+    }
+}
